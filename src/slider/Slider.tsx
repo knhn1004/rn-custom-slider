@@ -54,12 +54,12 @@ export default () => {
   );
 
   return (
-    <View style={styles.container}>
-      <View style={styles.slider}>
-        <View style={styles.sliderBackground}>
-          <Animated.View style={[styles.sliderInner, { width: x }]} />
-        </View>
-        <PanGestureHandler {...gestureHandler}>
+    <PanGestureHandler {...gestureHandler}>
+      <Animated.View style={styles.container}>
+        <View style={styles.slider}>
+          <View style={styles.sliderBackground}>
+            <Animated.View style={[styles.sliderInner, { width: x }]} />
+          </View>
           <Animated.View
             style={{
               position: 'absolute',
@@ -80,10 +80,10 @@ export default () => {
               <Knob state={state} scale={scale} />
             </Animated.View>
           </Animated.View>
-        </PanGestureHandler>
-      </View>
-      <ReText text={label} style={styles.label} />
-    </View>
+        </View>
+        <ReText text={label} style={styles.label} />
+      </Animated.View>
+    </PanGestureHandler>
   );
 };
 
